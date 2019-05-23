@@ -1,0 +1,40 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button disabled *ngIf="!updated" color="primary">
+        Ok
+      </ion-button>
+      <ion-button (click)="Update_picture()" *ngIf="updated" color="primary">
+          Ok
+        </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <h4 text-center>{{company.Name}}</h4>
+  <ion-row justify-content-center>
+      <img class="imagen2" src="assets/powered.png">
+  </ion-row>
+  <h5 text-center> Grand Prize Goal: <small>{{usr.Grand_Prize}}</small></h5>
+  <ion-row margin-top justify-content-center>
+    <ion-avatar class="profile-pic">
+      <img src="{{usr.Picture_url}}">
+      <!--<ion-button shape="round" class="circle-button front">-->
+      <div class="circle">
+        <i class="fas fa-pencil-alt fa-lg circle-button front" (click)="Change_picture()"></i>
+      </div>
+      <!--</ion-button>-->
+    </ion-avatar>
+  </ion-row>
+  <h3 text-center>{{usr.Name+' '+usr.LastName}}</h3>
+  <h5 text-center>{{usr.Department}}</h5>
+  <br />
+  <h2 text-center><strong>{{usr.points}}</strong></h2>
+  <h4 text-center>Points earned</h4>
+</ion-content>

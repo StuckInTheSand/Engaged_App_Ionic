@@ -1,0 +1,25 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/rewards"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div text-center>
+    <h4>Your points: {{usr.points}} pts</h4>
+    <ion-slides pager="true" class="mar-top">
+      <ion-slide class="borders">
+        <img src="{{currentItem.Pic_url}}" class="imagen">
+        <i *ngIf="!fav" class="far fa-heart heart fa-lg" (click)="favorites()"></i>
+        <i *ngIf="fav" class="fas fa-heart heart fa-lg full"  (click)="favorites()"></i>
+      </ion-slide>
+      
+    </ion-slides>
+    <h4>{{currentItem.Name}}</h4>
+    <h5>Price: {{currentItem.Price}} pts</h5>
+    <ion-button shape="round" (click)="getProduct(currentItem.Price)">Reedem</ion-button>
+  </div>
+</ion-content>

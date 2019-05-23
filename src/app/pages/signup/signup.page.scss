@@ -1,0 +1,80 @@
+.avatar{
+    width: 30vw;
+    height: 30vw;
+}
+
+.icon{
+    margin-top:10px;
+    margin-right: 1rem;
+}
+
+.input-login{
+    padding-left: 5px !important;
+    border-bottom:1px solid #ccc;
+    font-size:14px;
+    height: 9vw;
+}
+
+.input-container-up{
+    width: 75%;
+    margin:auto;
+}
+
+.input-container-down{
+    width: 75%;
+    margin: 3% auto 3% auto;
+}
+
+.login-text{
+    color:#0e46a3 !important;
+    margin-top:10spx;
+    font-size: 18px;
+}
+
+.password-text{
+    color:#f04141;
+    margin-top:15px;
+    font-size: 18px;
+}
+
+.circle-button{
+    margin-top: -10vw;
+    margin-right: -3vw;
+    color: #007bff;
+    width: 12vw;
+    height: 12vw;
+    float: right;
+}
+
+.back{
+    z-index: 0;
+    position: relative;
+}
+
+.front{
+    z-index: 1;
+    position: relative;
+}
+
+.progress{
+    margin-top:45vh;
+    height: 10px;
+    border-radius: 7px;
+    position: absolute;
+    width: 91%;
+}
+
+.opacit{
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.1;
+    background-color: #000;
+}
+
+.CmbBox{
+    width: 100%;
+    padding-left: 9.5vw;
+}

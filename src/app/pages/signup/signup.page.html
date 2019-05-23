@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Register
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/session"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="opacit" *ngIf="showProgress"></div>
+  <ion-progress-bar *ngIf="showProgress" class="progress" type="indeterminate"></ion-progress-bar>
+
+  <div *ngIf="showInputs" style="margin-top:3rem; padding:0rem 2rem 0rem 2rem;">
+    <ion-row margin-top justify-content-center>
+      Choose one of the following options
+    </ion-row>
+    <ion-button color="primary" expand="block" style="--border-radius:3px; margin-top:3rem; margin-bottom:2rem;">
+      <i class="fab fa-facebook-f" style="margin-right:2rem;"></i>
+      Continue with Facebook
+    </ion-button>
+
+    <ion-button color="danger" expand="block" style="--border-radius:3px; margin-top:3rem; margin-bottom:3rem;">
+      <i class="fab fa-google" style="margin-right:2rem;"></i>
+      Continue with Google
+    </ion-button>
+    <ion-row justify-content-center>
+      <small>or</small>
+    </ion-row>
+    <ion-row justify-content-center>
+      <ion-button fill="clear" (click)="redirect('show')" size="large">
+        Create your account
+      </ion-button>
+    </ion-row>
+  </div>
+  <div *ngIf="!showInputs" style="margin-top:1rem;">
+    <ion-row margin-top justify-content-center>
+      <ion-avatar class="avatar">
+        <img [src]="usr.Picture_url" class="back">
+        <ion-icon (click)="Show_Action_Sheet()" class="circle-button front" name="add-circle" color="dark"></ion-icon>
+      </ion-avatar>
+    </ion-row>
+    <ion-row justify-content-center margin-bottom>
+      <h6>
+        Create your account
+      </h6>
+    </ion-row>
+    <div>
+      <ion-row margin-top class="input-container-up">
+        <i class="far fa-user icon"></i>
+        <ion-input class="input-login" placeholder="First Name" [(ngModel)]="usr.Name"></ion-input>
+      </ion-row>
+      <ion-row class="input-container-down">
+        <i class="fas fa-user icon"></i>
+        <ion-input class="input-login" placeholder="Last Name" [(ngModel)]="usr.LastName"></ion-input>
+      </ion-row>
+      <!--<ion-row class="input-container-down">
+        <ion-input class="input-login" placeholder="Apellido Materno" [(ngModel)]="usr.apellidoMaterno"></ion-input>
+      </ion-row>-->
+      <ion-row class="input-container-down">
+        <i class="far fa-envelope icon"></i>
+        <ion-input class="input-login" placeholder="Email" [(ngModel)]="usr.email"></ion-input>
+      </ion-row>
+      <ion-row class="input-container-down">
+        <i class="fas fa-lock icon"></i>
+        <ion-input placeholder="Password" class="input-login" type="password" [(ngModel)]="usr.password">
+        </ion-input>
+      </ion-row>
+      <ion-row class="input-container-down">
+        <i class="fas fa-lock icon"></i>
+        <ion-input placeholder="Confirm Password" class="input-login" type="password" [(ngModel)]="confirmPassword">
+        </ion-input>
+      </ion-row>
+
+      <ion-row justify-content-center class="input-container-down">
+        <i class="fas fa-user-tie icon" style="position:absolute; left:15.9vw;"></i>
+        <ion-select (ionChange)="changeOption($event.target.value)" interface="popover"
+          placeholder="Select your company" class="CmbBox" [(ngModel)]="usr.Company_ID">
+          <ion-select-option *ngFor="let company of listOfCompanies" value="{{company.ID}}">
+            {{company.Name}}</ion-select-option>
+        </ion-select>
+      </ion-row>
+
+      <ion-row justify-content-center class="input-container-down">
+        <i class="fas fa-user-tie icon" style="position:absolute; left:15.9vw;"></i>
+        <ion-select disabled="{{storeDisabled}}" interface="popover" placeholder="Select your store" class="CmbBox"
+          [(ngModel)]="usr.Store_ID">
+          <ion-select-option *ngFor="let store of listOfStores" value="{{store.ID}}">
+            {{store.Name}}</ion-select-option>
+        </ion-select>
+      </ion-row>
+
+      <ion-row text-center justify-content-center style="margin-top:2rem;">
+        <ion-col>
+          <a (click)="create_account()" class="login-text" router-direction="forward">Create account</a>
+        </ion-col>
+        <ion-col>
+          <a (click)="redirect('cancel')" class="password-text" router-direction="back">Cancel</a>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

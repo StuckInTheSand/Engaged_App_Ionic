@@ -1,0 +1,28 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>statistics</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding-right>
+  <ion-row *ngIf="visible" justify-content-center margin-top>
+    <strong margin-top>{{usr.Name + ' ' + usr.LastName}}</strong>
+  </ion-row>
+  <ion-row *ngIf="visible" justify-content-center>
+    <p>{{dateToday}}</p>
+  </ion-row>
+  <canvas [ngStyle]="{'display':visible ? '' : 'none' }" margin-top #lineCanvas
+    style="height: 30vh; width: 80vw;"></canvas>
+  <ion-row justify-content-center>
+    <ul *ngIf="visible">
+      <li margin *ngFor="let item of data; index as i" style="font-size: 0.7rem;">
+        used the phone for {{(item.Time_Engaged/60) | number:'1.0-2'}} minutes on {{item.Date}}
+      </li>
+    </ul>
+    <h5 *ngIf="!visible" text-center padding><small>There is not enough information. When you start to using
+        Engaged you are going to be able to track your time in this section.</small></h5>
+  </ion-row>
+</ion-content>

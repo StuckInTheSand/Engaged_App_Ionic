@@ -1,0 +1,86 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-toggle>
+        <ion-button>
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-buttons>
+    <ion-title>
+      
+    </ion-title>
+    <!--<ion-buttons slot="end">
+      <ion-avatar>
+        <img src="{{usr.Picture_url}}"
+          style="height: 35px; width: 35px; margin-right: 10px; margin-top:8px;">
+      </ion-avatar>
+    </ion-buttons>-->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="date">
+    <h4 style="margin-top:0;">{{dateToday}}</h4>
+  </div>
+  <div class="arrows">
+    <!--<i class="fas fa-chevron-right fa-2x mar"></i>
+    <i class="fas fa-chevron-right fa-2x mar"></i>
+    <i class="fas fa-chevron-right fa-2x mar"></i>
+    <i class="fas fa-chevron-right fa-2x mar"></i>
+    <i class="fas fa-chevron-right fa-2x mar"></i>-->
+  </div>
+  <div class="circle">
+    <div id="carouselExampleIndicators"
+      style="height: 100%; border-radius: 50%; border:3px solid #0e46a3; overflow: hidden; z-index:2;"
+      class="carousel slide" data-ride="carousel">
+      <!--<ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+      </ol>-->
+      <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let pic of resources; index as i"  [ngClass]="{'active':i==0}">
+          <img class="d-block" src="{{pic.src}}" class="imagen">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="arrows">
+      <a [ngStyle]="{'color':btn_text == 'Start' ? 'white' : 'red' }" (click)="iniciar()">
+          {{btn_text}}
+        </a>
+    <!--<i class="fas fa-chevron-right fa-2x mar"></i>
+    <i class="fas fa-chevron-right fa-2x mar"></i>
+    <i class="fas fa-chevron-right fa-2x mar"></i>
+    <i class="fas fa-chevron-right fa-2x mar"></i>
+    <i class="fas fa-chevron-right fa-2x mar"></i>-->
+  </div>
+  <div class="timer">
+    <h4 style="display:contents;" *ngIf="hours<10">0{{hours}}:</h4>
+    <h4 style="display:contents;" *ngIf="minutes<10">0{{minutes}}:</h4>
+    <h4 style="display:contents;" *ngIf="seconds<10">0{{seconds}}</h4>
+
+    <h4 style="display:contents;" *ngIf="hours>=10">{{hours}}:</h4>
+    <h4 style="display:contents;" *ngIf="minutes>=10">{{minutes}}:</h4>
+    <h4 style="display:contents;" *ngIf="seconds>=10">{{seconds}}</h4>
+    
+  </div>
+  <ion-row justify-content-center>
+      <img class="imagen2" src="assets/powered.png">
+  </ion-row>
+
+
+
+</ion-content>

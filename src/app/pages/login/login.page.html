@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Log In
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/session"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row style="margin-bottom: 3rem;" margin-top justify-content-center>
+    <ion-avatar class="avatar">
+      <img src="assets/EngagedCircle.png">
+    </ion-avatar>
+  </ion-row>
+  <div margin-top>
+    <ion-row class="input-container-up">
+      <i class="far fa-envelope icon"></i>
+      <ion-input class="input-login" placeholder="Email" [(ngModel)]="usr.email"></ion-input>
+    </ion-row>
+    <ion-row class="input-container-down">
+      <i class="fas fa-lock icon"></i>
+      <ion-input placeholder="Password" class="input-login" type="password" [(ngModel)]="usr.password"></ion-input>
+    </ion-row>
+    <ion-row text-center justify-content-center style="margin-top:3rem;">
+      <ion-col>
+        <a (click)="Submit_Form()" class="login-text" router-direction="forward">Continue</a>
+      </ion-col>
+      <ion-col>
+        <a (click)="cancel()" class="password-text" router-direction="back">Cancel</a>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

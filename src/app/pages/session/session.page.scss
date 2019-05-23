@@ -1,0 +1,17 @@
+.mt-c{
+    margin-top: 9rem;
+}
+
+.imagen{
+    margin-bottom: 2rem;
+    width: 90%;
+    height: auto;
+    max-height: 20vh;
+  }
+  @supports(object-fit: cover){
+      .imagen{
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+  }

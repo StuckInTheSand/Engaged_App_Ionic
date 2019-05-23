@@ -1,0 +1,50 @@
+.profile-pic{
+    width: 50vw;
+    height: 50vw;
+}
+
+.circle-button{
+    color: white;
+    margin-top: 4vw;
+    margin-left: 3.6vw;
+}
+
+.back{
+    z-index: 0;
+    position: relative;
+}
+
+.front{
+    z-index: 1;
+    position: relative;
+}
+
+.circle{
+    margin-top: -48vw;
+    margin-right: 2vw;
+    border-radius: 50%;
+    width: 12vw;
+    background-color: #0e46a3;
+    height: 12vw;
+    float: right;
+    z-index:1;
+    position: relative;
+}
+
+.disabled{
+    color:gray;
+}
+
+.imagen2{
+    margin-top: 2vw;
+ width: 60%;
+ height: auto;
+ max-height: 20vh;
+}
+@supports(object-fit: cover){
+   .imagen2{
+     height: 100%;
+     object-fit: cover;
+     object-position: center center;
+   }
+}

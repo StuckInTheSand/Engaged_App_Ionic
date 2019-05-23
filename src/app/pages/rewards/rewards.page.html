@@ -1,0 +1,41 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>Rewards</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+  <h3 text-center>You earned it!</h3>
+  <ion-grid margin-top>
+    <ion-row>
+      <ion-col *ngFor="let rew of rewards" size="6">
+        <div style="margin: 8vw; border:1px solid black; height: 30vw;" (click)="details(rew.ID)">
+          <div style="height: 80%; border-bottom: 1px solid black;">
+            <img src="{{rew.Pic_url}}" class="imagen">
+          </div>
+          <div style="height: 20%;">
+            {{rew.Price}} pts
+          </div>
+        </div>
+      </ion-col>
+
+    </ion-row>
+
+    <!--<ion-row>
+      <ion-col size="6">
+        <div style="margin: 8vw; border:1px solid black; height: 30vw;">
+          <div style="height: 80%; border-bottom: 1px solid black;">
+            <img src="assets/e.jpg" class="imagen">
+          </div>
+          <div style="height: 20%;">
+            233 pts
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>-->
+
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="option=='error'">
+    <div style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);" text-center>
+      <h1 style="font-size: 70px; margin-bottom: 1rem;">Sorry!</h1>
+      <h3>Work hard to reach your goal.</h3>
+    </div>
+  </div>
+
+  <div *ngIf="option=='success'">
+    <div style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);" text-center>
+      <h1 style="font-size: 70px; margin-bottom: 1rem;">Congrats!</h1>
+      <h3>Work hard, make a differece. Enjoy your reward soon.</h3>
+      <ion-button style="margin-top:2rem;" shape="round" (click)="BuyItem()">Order</ion-button>
+    </div>
+  </div>
+
+</ion-content>
